@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DOM LEARNING</title>
+		<script>
+			function getData(){
+				let student = {
+					firstName : document.getElementById('fname').value,
+					lastName : document.getElementById('lname').value,
+					age : document.getElementById('age').value,
+				}
+				if(student.firstName == ''){
+					alert('Please Enter 1st name');
+				}else if(student.lastName == ''){
+					alert('Please Enter last name');
+				}else if(student.age == ''){
+					alert('Please Enter age');
+				}else
+					console.log(student.firstName,student.lastName,student.age);
+				}
+			function getData1(){
+				let details = {
+					collegeName : document.getElementById('cname').value,
+					cityName : document.getElementById('ciname').value,
+					district: document.getElementById('dist').value,
+				}
+				
+				if(details.collegetName == ''){
+					alert('Please Enter clg name');
+				}else if(details.cityName == ''){
+					alert('Please Enter city name');
+				}else if(details.district == ''){
+					alert('Please Enter district');
+				}else{
+					console.log(details.collegetName,details.cityName,details.district);
+				}
+			}
+			function getNameData(){
+				let genderList = document.getElementsByName('gender');
+				for(let x of genderList){
+					if(x.checked){
+						var gender = x.value;
+					}
+				}
+				if(gender == null){
+					alert('select any one option')
+				}else{
+					console.log(gender);
+				}
+			}
+			function getNameData1(){
+				let religionList = document.getElementsByName('Religion');
+				for(let y of religionList){
+					if(y.checked){
+						var Religion  = y.value;
+					}
+				}
+				if(Religion == null){
+					alert('select any one option')
+				}else{
+					console.log(Religion);
+				}
+				}
+				function getTagData(){
+				let paragraphList = document.getElementsByTagName('fieldset');
+				for(let l of paragraphList){
+					console.log(l.innerText);
+			}
+			}
+			function getClassName(){
+				let oddParaList = document.getElementsByClassName('even');
+				//for(let z of oddParaList){
+					console.log(oddParaList[1].innerText);
+			
+				
+				}
+			function getQueryData(){
+				let queryData = document.querySelector('label,p');
+				console.log(queryData);
+				
+				let queryAllData = document.querySelectorAll('label,p');
+				console.log(queryAllData);
+			}
+		</script>
+	</head>
+	<body>
+		<fieldset>
+			<label>First Name :</label>
+			<input id="fname" type="text">
+			<label>Second Name : </label>
+			<input id="lname" type="text" placeholder="Enter ur 2nd name" required>
+			<label>Age</label>
+			<input id="age" type="text" placeholder="Enter ur age" required>
+			<input type="button" value="GET ID DATA" onclick="getData()">
+		</fieldset>
+		<fieldset>
+		<label>college name:</label>
+			<input id="cname" type="text" placeholder="Enter clg name" required>
+			<label>city Name : </label>
+			<input id="ciname" type="text" placeholder="Enter city name" required>
+			<label>District:</label>
+			<input id="dist" type="text" placeholder="Enter district name" required>
+			<input type="button" value="GET ID DATA" onclick="getData1()">
+
+		</fieldset>
+		<fieldset>
+			<label> Gender </label>
+			<input type="radio" id="male" name="gender" value="male"><label> Male </label>
+			<input type="radio" id="female" name="gender" value="female"><label> Female </label>
+			<input type="radio" id="transgender" name="gender" value="transgender"><label> Transgender </label>
+			<input type="button" onclick="getNameData()" value="GET NAME DATA">
+		</fieldset>
+		<fieldset>
+			<label> Religion </label>
+			<input type="radio" id="hindu" name="Religion" value="hindu"><label> Hindu </label>
+			<input type="radio" id="christian" name="Religion" value="christian"><label> Christian</label>
+			<input type="radio" id="muslim" name="Religion" value="muslim"><label> Muslim</label>
+			<input type="button" onclick="getNameData1()" value="GET NAME DATA">
+		</fieldset>
+		<fieldset>
+			<p>1 This is my para</p>
+			<p>2 This is my para</p>
+			<p>3 This is my para</p>
+			<p>4 This is my para</p>
+			<p>5 This is my para</p>
+			<button id="btn" onclick="getTagData()">GET TAG DATA</button>
+		</fieldset>
+		<fieldset>
+			<p  class="odd">1 This is my para</p>
+			<p  class="even">2 This is my para</p>
+			<p  class="odd">3 This is my para</p>
+			<p class="even">4 This is my para</p>
+			<p class="odd">5 This is my para</p>
+			<button id="btn" onclick="getClassName()">GET CLASS DATA</button>
+		</fieldset>
+		<fieldset>
+			<p class="odd">1 This is my para</p>
+			<p class="even">2 This is my para</p>
+			<p class="odd">3 This is my para</p>
+			<p class="even"> 4 This is my para</p>
+			<p class="odd">5 This is my para</p>
+			<button id="query" onclick="getQueryData()">GET Query DATA</button>
+		</fieldset>
+	</body>
+</html>
