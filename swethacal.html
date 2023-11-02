@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<title>Calcultor</title>
+	<style>
+	fieldset{
+	background-color:gray;
+	border:5px solid black;
+	margin-top:40px;
+	border-radius:15px;
+	}
+	#head{
+	color:white;
+    margin-left:10px;
+	margin-top:10px;
+	text-align:center;
+	}
+	
+	#box{
+	width:255px;
+	border:3px solid black;
+	text-align:end;
+	border-radius:5px;
+	}
+	
+	.btn{
+	border:3px solid black;
+	background-color:white;
+	height:70px;
+	width:23%;
+	border-radius:10px;
+	}
+	
+	
+	</style>
+</head>
+<body  style="margin-left:500px">
+<fieldset style="width:18%" "background-color:gray">
+<label id="head"><h1>CALCULATOR</h1></label>
+<input  type="text" id="box" placeholder="0"  style="height:30px"  ><br><br>
+<div>
+<button class="btn" onclick="display('+')"> <b>+</b></button>
+<button class="btn" onclick="display('-')"> <b>-</b></button>
+<button class="btn" onclick="display('*')"> <b>*</b></button>
+<button class="btn" onclick="display('/')"> <b>/</b></button>
+</div><br>
+<div>
+<button class="btn"onclick="display('1')"><b> 1</b></button>
+<button class="btn"onclick="display('2')"> <b>2</b></button>
+<button class="btn"onclick="display('3')"><b> 3</b></button>
+<button class="btn"onclick="display('4')"><b> 4</b></button>
+</div><br>
+<div>
+<button class="btn" onclick="display('5')"><b> 5</b></button>
+<button class="btn" onclick="display('6')"><b> 6</b></button>
+<button class="btn" onclick="display('7')"> <b>7</b></button>
+<button class="btn" onclick="display('8')"><b> 8</b></button>
+</div><br>
+<div>
+<button class="btn" onclick="display('9')"> <b>9</b></button>
+<button class="btn" onclick="display('0')"> <b>0</b></button>
+<button class="btn" onclick="equal()"><b> =<b></button>
+<button class="btn"  onclick="clr()"> <b>CLR</b></button></div>
+
+
+
+</fieldset>
+<script>
+	let box = document.getElementById('box');
+	
+	function display(num){
+	box.value+=num;
+	}
+	function equal(){
+	let out = box.value;
+	box.value=eval(out);
+	}
+	function clr(){
+	document.getElementById('box').value=" ";
+	}
+	
+	</script>
+</body>
+</html>
